@@ -1,34 +1,7 @@
-import { ArrowRight, CheckCircle, Zap, Shield, BarChart3, Users, Building2, Shirt, ExternalLink, ChevronRight, Code2, Globe, Layers } from "lucide-react";
+import { ArrowRight, Zap, Shield, BarChart3, Building2, Shirt, Code2, Globe, Layers } from "lucide-react";
 import { LogoMark, LogoMarkSmall, PawnSVG } from "./components/Logo";
+import { ProductsScroll } from "./components/ProductsScroll";
 
-const products = [
-  {
-    icon: <Shirt className="h-6 w-6" />,
-    name: "CestoAgenda",
-    tagline: "Gestão para lavanderias residenciais",
-    description:
-      "Plataforma completa para lavanderias oferecerem coleta e entrega agendada. Clientes solicitam pelo app, o operador confirma e gerencia tudo pelo painel — com notificações automáticas e controle de cestos.",
-    features: ["Agendamento online", "Painel do operador", "Push notifications", "Planos e assinaturas", "Controle de cestos"],
-    color: "from-blue-500 to-cyan-500",
-    badge: "Disponível",
-    badgeColor: "bg-blue-500/10 text-blue-400 border border-blue-500/20",
-    url: "https://cesto-agenda.vercel.app",
-    accentBg: "bg-blue-500/5 border-blue-500/10",
-  },
-  {
-    icon: <Building2 className="h-6 w-6" />,
-    name: "Sua Imobiliária",
-    tagline: "Plataforma white-label para imobiliárias",
-    description:
-      "Solução completa para imobiliárias digitalizarem sua operação. Site white-label personalizado, backoffice de gestão de imóveis, clientes e corretores — tudo integrado e pronto para usar.",
-    features: ["Site white-label", "Backoffice completo", "Gestão de imóveis", "CRM de clientes", "Multi-imobiliária"],
-    color: "from-emerald-500 to-teal-500",
-    badge: "No ar",
-    badgeColor: "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20",
-    url: "https://www.suaimobiliaria.com",
-    accentBg: "bg-emerald-500/5 border-emerald-500/10",
-  },
-];
 
 const values = [
   {
@@ -157,79 +130,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Produtos */}
-      <section id="produtos" className="py-28 px-6">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16">
-            <p className="text-[13px] font-semibold text-violet-400 uppercase tracking-widest mb-3">Portfólio</p>
-            <h2 className="text-[38px] md:text-[48px] font-black tracking-tight text-white mb-4">
-              Nossos produtos
-            </h2>
-            <p className="text-[17px] text-gray-400 max-w-xl mx-auto">
-              Plataformas em produção, usadas por clientes reais.
-            </p>
-          </div>
-
-          <div className="space-y-6">
-            {products.map((p, i) => (
-              <div
-                key={p.name}
-                className={`rounded-2xl border ${p.accentBg} p-8 md:p-10 relative overflow-hidden`}
-              >
-                {/* número decorativo */}
-                <span className={`absolute right-8 top-6 text-[80px] font-black bg-gradient-to-br ${p.color} bg-clip-text text-transparent opacity-10 leading-none select-none`}>
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-
-                <div className="relative flex flex-col md:flex-row md:items-start gap-8">
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-3 mb-5">
-                      <div className={`w-11 h-11 rounded-xl bg-gradient-to-br ${p.color} flex items-center justify-center text-white shrink-0`}>
-                        {p.icon}
-                      </div>
-                      <div>
-                        <div className="flex items-center gap-2">
-                          <h3 className="text-[20px] font-black text-white">{p.name}</h3>
-                          <span className={`text-[11px] font-bold px-2.5 py-0.5 rounded-full ${p.badgeColor}`}>
-                            {p.badge}
-                          </span>
-                        </div>
-                        <p className="text-[13px] text-gray-400 font-medium">{p.tagline}</p>
-                      </div>
-                    </div>
-
-                    <p className="text-[15px] text-gray-300 leading-relaxed mb-6 max-w-2xl">{p.description}</p>
-
-                    <div className="flex flex-wrap gap-2 mb-7">
-                      {p.features.map((f) => (
-                        <div key={f} className="flex items-center gap-1.5 bg-white/5 border border-white/10 rounded-full px-3 py-1">
-                          <CheckCircle className="h-3 w-3 text-green-400 shrink-0" />
-                          <span className="text-[12px] font-medium text-gray-300">{f}</span>
-                        </div>
-                      ))}
-                    </div>
-
-                    {p.url ? (
-                      <a
-                        href={p.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 bg-white text-gray-900 hover:bg-gray-100 font-bold text-[14px] px-5 py-2.5 rounded-xl transition-colors"
-                      >
-                        Acessar plataforma <ExternalLink className="h-3.5 w-3.5" />
-                      </a>
-                    ) : (
-                      <span className="inline-flex items-center gap-2 bg-white/5 text-gray-500 font-bold text-[14px] px-5 py-2.5 rounded-xl cursor-not-allowed border border-white/5">
-                        Em desenvolvimento
-                      </span>
-                    )}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ProductsScroll />
 
       {/* CTA */}
       <section className="py-28 px-6 relative overflow-hidden">
