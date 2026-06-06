@@ -52,7 +52,7 @@ export default function Home() {
               Produtos
             </a>
             <a
-              href="mailto:contato@gambitech.com.br"
+              href="mailto:eduardo33.luiz@gmail.com"
               className="text-[13px] font-semibold bg-violet-600 hover:bg-violet-500 text-white px-4 py-2 rounded-lg transition-colors"
             >
               Contato
@@ -102,7 +102,7 @@ export default function Home() {
               Ver produtos <ArrowRight className="h-4 w-4" />
             </a>
             <a
-              href="mailto:contato@gambitech.com.br"
+              href="mailto:eduardo33.luiz@gmail.com"
               className="inline-flex items-center gap-2 border border-white/10 hover:border-white/20 text-gray-300 hover:text-white font-semibold px-6 py-3 rounded-xl transition-colors"
             >
               Falar com a equipe
@@ -150,7 +150,7 @@ export default function Home() {
             Construímos software sob medida para negócios que precisam de soluções digitais eficientes e prontas para crescer.
           </p>
           <a
-            href="mailto:contato@gambitech.com.br"
+            href="mailto:eduardo33.luiz@gmail.com"
             className="inline-flex items-center gap-2 bg-violet-600 hover:bg-violet-500 text-white font-black text-[16px] px-8 py-4 rounded-xl transition-colors shadow-xl shadow-violet-600/30"
           >
             Entrar em contato <ArrowRight className="h-5 w-5" />
@@ -168,8 +168,8 @@ export default function Home() {
           <p className="text-[12px] text-gray-600 text-center">
             © {new Date().getFullYear()} Gambit Tech · LUIZ E F SA TECNOLOGIA · CNPJ 40.311.947/0001-38
           </p>
-          <a href="mailto:contato@gambitech.com.br" className="text-[13px] text-gray-500 hover:text-gray-300 transition-colors">
-            contato@gambitech.com.br
+          <a href="mailto:eduardo33.luiz@gmail.com" className="text-[13px] text-gray-500 hover:text-gray-300 transition-colors">
+            eduardo33.luiz@gmail.com
           </a>
         </div>
       </footer>

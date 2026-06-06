@@ -14,7 +14,7 @@ const items = [
       "Desenvolvemos soluções de IA para automatizar processos, extrair insights de dados e integrar modelos de linguagem ao seu negócio. Desde chatbots inteligentes até pipelines de análise preditiva.",
     features: ["Automação de processos", "Chatbots com LLMs", "Análise preditiva", "Integração com APIs de AI", "Dashboards inteligentes"],
     cta: "Falar sobre seu projeto",
-    url: "mailto:contato@gambitech.com.br",
+    url: "mailto:eduardo33.luiz@gmail.com",
     ctaExternal: false,
     icon: Brain,
     accent: "#7c3aed",
