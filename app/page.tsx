@@ -60,7 +60,7 @@ export default function Home() {
             <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-600 to-indigo-600 flex items-center justify-center">
               <span className="text-white font-black text-[13px]">G</span>
             </div>
-            <span className="font-black text-[17px] tracking-tight text-gray-900">GambiTech</span>
+            <span className="font-black text-[17px] tracking-tight text-gray-900">Gambit Tech</span>
           </div>
           <a
             href="mailto:contato@gambitech.com.br"
@@ -220,10 +220,10 @@ export default function Home() {
             <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-violet-600 to-indigo-600 flex items-center justify-center">
               <span className="text-white font-black text-[12px]">G</span>
             </div>
-            <span className="font-black text-[15px] text-gray-900">GambiTech</span>
+            <span className="font-black text-[15px] text-gray-900">Gambit Tech</span>
           </div>
           <p className="text-[13px] text-gray-400">
-            © {new Date().getFullYear()} GambiTech · LUIZ E F SA TECNOLOGIA · CNPJ 40.311.947/0001-38
+            © {new Date().getFullYear()} Gambit Tech · LUIZ E F SA TECNOLOGIA · CNPJ 40.311.947/0001-38
           </p>
           <a href="mailto:contato@gambitech.com.br" className="text-[13px] text-gray-500 hover:text-gray-700 transition-colors">
             contato@gambitech.com.br
