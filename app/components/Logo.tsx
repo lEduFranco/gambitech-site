@@ -1,69 +1,71 @@
-export function LogoIcon({ size = 32 }: { size?: number }) {
+// Peão de xadrez SVG — silhueta clássica reconhecível
+export function PawnSVG({ size = 32, color = "white" }: { size?: number; color?: string }) {
   return (
     <svg
       width={size}
       height={size}
-      viewBox="0 0 32 32"
+      viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <defs>
-        <linearGradient id="pawn-grad" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stopColor="#7c3aed" />
-          <stop offset="100%" stopColor="#4f46e5" />
-        </linearGradient>
-        <linearGradient id="pawn-grad-sm" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stopColor="#7c3aed" />
-          <stop offset="100%" stopColor="#4f46e5" />
-        </linearGradient>
-      </defs>
-
-      {/* fundo arredondado */}
-      <rect width="32" height="32" rx="8" fill="url(#pawn-grad)" />
-
-      {/* peão — desenhado em branco dentro do fundo violeta */}
       {/* cabeça */}
-      <circle cx="16" cy="9" r="4" fill="white" />
-
-      {/* pescoço */}
-      <rect x="14" y="13" width="4" height="2" rx="1" fill="white" />
-
-      {/* corpo */}
-      <path
-        d="M11.5 15 Q11 19 10 21 H22 Q21 19 20.5 15 Z"
-        fill="white"
-      />
-
+      <circle cx="12" cy="5.5" r="3.5" fill={color} />
+      {/* pescoço curto */}
+      <rect x="10.5" y="8.5" width="3" height="1.5" rx="0.75" fill={color} />
+      {/* corpo trapezoidal */}
+      <path d="M8.5 10 C8 12.5 7.5 14 7 15.5 H17 C16.5 14 16 12.5 15.5 10 Z" fill={color} />
       {/* base */}
-      <rect x="9" y="21" width="14" height="3" rx="1.5" fill="white" />
-
-      {/* detalhe tech — linha horizontal no corpo */}
-      <line x1="13" y1="18" x2="19" y2="18" stroke="url(#pawn-grad)" strokeWidth="1" strokeLinecap="round" />
+      <rect x="5.5" y="15.5" width="13" height="3" rx="1.5" fill={color} />
     </svg>
   );
 }
 
-export function LogoIconSmall({ size = 28 }: { size?: number }) {
+export function LogoMark({ size = 36 }: { size?: number }) {
   return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 28 28"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
+    <div
+      style={{ width: size, height: size }}
+      className="rounded-xl bg-gradient-to-br from-violet-600 to-indigo-600 flex items-center justify-center shrink-0 shadow-lg shadow-violet-500/25"
     >
-      <defs>
-        <linearGradient id="pawn-grad-s" x1="0" y1="0" x2="28" y2="28" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stopColor="#7c3aed" />
-          <stop offset="100%" stopColor="#4f46e5" />
-        </linearGradient>
-      </defs>
-      <rect width="28" height="28" rx="7" fill="url(#pawn-grad-s)" />
-      <circle cx="14" cy="8" r="3.5" fill="white" />
-      <rect x="12.5" y="11.5" width="3" height="1.5" rx="0.75" fill="white" />
-      <path d="M10 13 Q9.5 16.5 8.5 18.5 H19.5 Q18.5 16.5 18 13 Z" fill="white" />
-      <rect x="7.5" y="18.5" width="13" height="2.5" rx="1.25" fill="white" />
-      <line x1="11.5" y1="15.8" x2="16.5" y2="15.8" stroke="url(#pawn-grad-s)" strokeWidth="0.8" strokeLinecap="round" />
-    </svg>
+      <PawnSVG size={Math.round(size * 0.65)} />
+    </div>
+  );
+}
+
+export function LogoMarkSmall({ size = 28 }: { size?: number }) {
+  return (
+    <div
+      style={{ width: size, height: size }}
+      className="rounded-lg bg-gradient-to-br from-violet-600 to-indigo-600 flex items-center justify-center shrink-0"
+    >
+      <PawnSVG size={Math.round(size * 0.65)} />
+    </div>
+  );
+}
+
+// Logo completa: ícone + texto
+export function Logo({ size = 36 }: { size?: number }) {
+  return (
+    <div className="flex items-center gap-2.5">
+      <LogoMark size={size} />
+      <span className="font-black tracking-tight text-gray-900" style={{ fontSize: size * 0.47 }}>
+        Gambit Tech
+      </span>
+    </div>
+  );
+}
+
+export function LogoWhite({ size = 36 }: { size?: number }) {
+  return (
+    <div className="flex items-center gap-2.5">
+      <div
+        style={{ width: size, height: size }}
+        className="rounded-xl bg-white/20 border border-white/30 flex items-center justify-center shrink-0"
+      >
+        <PawnSVG size={Math.round(size * 0.65)} />
+      </div>
+      <span className="font-black tracking-tight text-white" style={{ fontSize: size * 0.47 }}>
+        Gambit Tech
+      </span>
+    </div>
   );
 }
