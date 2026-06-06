@@ -33,7 +33,7 @@ const items = [
       "Plataforma completa para lavanderias oferecerem coleta e entrega agendada. Clientes solicitam pelo app, o operador confirma e gerencia tudo pelo painel — com notificações automáticas e controle de cestos.",
     features: ["Agendamento online", "Painel do operador", "Push notifications", "Planos e assinaturas", "Controle de cestos"],
     cta: "Acessar plataforma",
-    url: "https://cesto-agenda.vercel.app",
+    url: "https://cestoagenda.com",
     ctaExternal: true,
     icon: Shirt,
     accent: "#3b82f6",
