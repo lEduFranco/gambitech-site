@@ -1,71 +1,55 @@
-// Peão de xadrez SVG — silhueta clássica reconhecível
-export function PawnSVG({ size = 32, color = "white" }: { size?: number; color?: string }) {
+// LogoMark: SVG puro com fundo gradiente + peão branco integrado
+// O peão ocupa ~80% do espaço — bem maior e mais legível em qualquer tamanho
+export function LogoMark({ size = 36, radius = 10 }: { size?: number; radius?: number }) {
   return (
     <svg
       width={size}
       height={size}
-      viewBox="0 0 24 24"
+      viewBox="0 0 100 100"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className="shrink-0 drop-shadow-lg"
     >
-      {/* cabeça */}
-      <circle cx="12" cy="5.5" r="3.5" fill={color} />
-      {/* pescoço curto */}
-      <rect x="10.5" y="8.5" width="3" height="1.5" rx="0.75" fill={color} />
-      {/* corpo trapezoidal */}
-      <path d="M8.5 10 C8 12.5 7.5 14 7 15.5 H17 C16.5 14 16 12.5 15.5 10 Z" fill={color} />
-      {/* base */}
-      <rect x="5.5" y="15.5" width="13" height="3" rx="1.5" fill={color} />
+      <defs>
+        <linearGradient id="bg-grad" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="#7c3aed" />
+          <stop offset="100%" stopColor="#4338ca" />
+        </linearGradient>
+      </defs>
+
+      {/* fundo */}
+      <rect width="100" height="100" rx={radius} fill="url(#bg-grad)" />
+
+      {/* ── PEÃO ── */}
+      {/* cabeça pequena */}
+      <circle cx="50" cy="18" r="11" fill="white" />
+      {/* haste fina — colo bem estreito tipo pilar */}
+      <rect x="47" y="28" width="6" height="10" fill="white" />
+      {/* corpo: começa já bem largo no topo — semicírculo achatado */}
+      <path
+        d="M18 38 Q18 38 50 36 Q82 38 82 38 Q84 50 83 60 Q82 68 80 72 L20 72 Q18 68 17 60 Q16 50 18 38 Z"
+        fill="white"
+      />
+      {/* base fina */}
+      <rect x="20" y="72" width="60" height="9" rx="4" fill="white" />
+      {/* pedestal largo */}
+      <rect x="12" y="81" width="76" height="9" rx="4" fill="white" />
     </svg>
   );
 }
 
-export function LogoMark({ size = 36 }: { size?: number }) {
-  return (
-    <div
-      style={{ width: size, height: size }}
-      className="rounded-xl bg-gradient-to-br from-violet-600 to-indigo-600 flex items-center justify-center shrink-0 shadow-lg shadow-violet-500/25"
-    >
-      <PawnSVG size={Math.round(size * 0.65)} />
-    </div>
-  );
-}
-
 export function LogoMarkSmall({ size = 28 }: { size?: number }) {
-  return (
-    <div
-      style={{ width: size, height: size }}
-      className="rounded-lg bg-gradient-to-br from-violet-600 to-indigo-600 flex items-center justify-center shrink-0"
-    >
-      <PawnSVG size={Math.round(size * 0.65)} />
-    </div>
-  );
+  return <LogoMark size={size} radius={8} />;
 }
 
-// Logo completa: ícone + texto
-export function Logo({ size = 36 }: { size?: number }) {
+export function PawnSVG({ size = 32, color = "white" }: { size?: number; color?: string }) {
   return (
-    <div className="flex items-center gap-2.5">
-      <LogoMark size={size} />
-      <span className="font-black tracking-tight text-gray-900" style={{ fontSize: size * 0.47 }}>
-        Gambit Tech
-      </span>
-    </div>
-  );
-}
-
-export function LogoWhite({ size = 36 }: { size?: number }) {
-  return (
-    <div className="flex items-center gap-2.5">
-      <div
-        style={{ width: size, height: size }}
-        className="rounded-xl bg-white/20 border border-white/30 flex items-center justify-center shrink-0"
-      >
-        <PawnSVG size={Math.round(size * 0.65)} />
-      </div>
-      <span className="font-black tracking-tight text-white" style={{ fontSize: size * 0.47 }}>
-        Gambit Tech
-      </span>
-    </div>
+    <svg width={size} height={size} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="50" cy="20" r="12" fill={color} />
+      <rect x="45" y="31" width="10" height="9" rx="3" fill={color} />
+      <path d="M28 40 Q22 52 21 62 Q20 68 22 72 L78 72 Q80 68 79 62 Q78 52 72 40 Z" fill={color} />
+      <rect x="24" y="72" width="52" height="10" rx="5" fill={color} />
+      <rect x="16" y="82" width="68" height="10" rx="5" fill={color} />
+    </svg>
   );
 }
