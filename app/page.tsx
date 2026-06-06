@@ -1,4 +1,5 @@
 import { ArrowRight, CheckCircle, Code2, Layers, Zap, Building2, Shirt, ChevronRight } from "lucide-react";
+import { LogoIcon, LogoIconSmall } from "./components/Logo";
 
 const products = [
   {
@@ -57,9 +58,7 @@ export default function Home() {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-600 to-indigo-600 flex items-center justify-center">
-              <span className="text-white font-black text-[13px]">G</span>
-            </div>
+            <LogoIcon size={32} />
             <span className="font-black text-[17px] tracking-tight text-gray-900">Gambit Tech</span>
           </div>
           <a
@@ -217,9 +216,7 @@ export default function Home() {
       <footer className="py-10 px-6 border-t border-gray-100">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2.5">
-            <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-violet-600 to-indigo-600 flex items-center justify-center">
-              <span className="text-white font-black text-[12px]">G</span>
-            </div>
+            <LogoIconSmall size={28} />
             <span className="font-black text-[15px] text-gray-900">Gambit Tech</span>
           </div>
           <p className="text-[13px] text-gray-400">
