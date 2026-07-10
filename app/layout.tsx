@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { createBaseMetadata } from "./data/site";
+import { GoogleAnalytics } from "./components/GoogleAnalytics";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -12,46 +14,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Gambit Tech — Software que resolve problemas reais",
-  description:
-    "Software house brasileira que constrói plataformas digitais para mercados específicos. CestoAgenda para lavanderias, Sua Imobiliária para imobiliárias.",
-  keywords: ["software house", "plataforma digital", "lavanderia", "imobiliária", "SaaS", "Brasil"],
-  authors: [{ name: "Gambit Tech" }],
-  creator: "Gambit Tech",
-  metadataBase: new URL("https://gambitech.com.br"),
-  openGraph: {
-    type: "website",
-    locale: "pt_BR",
-    url: "https://gambitech.com.br",
-    siteName: "Gambit Tech",
-    title: "Gambit Tech — Software que resolve problemas reais",
-    description:
-      "Software house brasileira que constrói plataformas digitais para mercados específicos.",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Gambit Tech — Software que resolve problemas reais",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Gambit Tech — Software que resolve problemas reais",
-    description:
-      "Software house brasileira que constrói plataformas digitais para mercados específicos.",
-    images: ["/og-image.png"],
-  },
-  icons: {
-    icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" },
-      { url: "/knight.png", type: "image/png" },
-    ],
-    apple: "/knight.png",
-  },
-};
+export const metadata: Metadata = createBaseMetadata();
 
 export default function RootLayout({
   children,
@@ -63,7 +26,10 @@ export default function RootLayout({
       lang="pt-BR"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <GoogleAnalytics />
+        {children}
+      </body>
     </html>
   );
 }
