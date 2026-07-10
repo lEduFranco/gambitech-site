@@ -89,12 +89,6 @@ export function createBaseMetadata(overrides: Metadata = {}): Metadata {
       description: DEFAULT_DESCRIPTION,
       images: [OG_IMAGE.url],
     },
-    icons: {
-      icon: [
-        { url: "/knight.png", type: "image/png" },
-      ],
-      apple: "/knight.png",
-    },
     other: {
       "geo.region": "BR-DF",
       "geo.placename": "Brasília",
